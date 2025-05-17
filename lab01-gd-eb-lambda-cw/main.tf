@@ -68,13 +68,13 @@ resource "aws_cloudwatch_event_rule" "gd_findings" {
   name        = "guardduty-findings"
   description = "Trigger Lambda on GuardDuty port scan"
 
-  event_pattern = jsonencode({
-    source = ["aws.guardduty"],
-    "detail-type" = ["GuardDuty Finding"],
-    detail = {
-      type = ["Recon:EC2/Portscan"]
-    }
-  })
+event_pattern = jsonencode({
+  "detail" = {
+    "type" = ["Recon:EC2/Portscan"]
+  },
+  "detail-type" = ["GuardDuty Finding"],
+  "source" = ["aws.guardduty"]
+})
 }
 
 resource "aws_cloudwatch_event_target" "lambda_target" {
