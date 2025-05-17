@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-central-1"
 }
 
 resource "aws_guardduty_detector" "main" {
@@ -89,8 +89,4 @@ resource "aws_lambda_permission" "allow_eventbridge" {
   function_name = aws_lambda_function.gd_logger.function_name
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.gd_findings.arn
-}
-
-output "guardduty_detector_id" {
-  value = aws_guardduty_detector.main.id
 }
