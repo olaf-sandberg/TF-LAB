@@ -1,2 +1,6 @@
-launch_role_arn       = "arn:aws:iam::321298294706:role/EC2-Demo-SR"
-launch_principal_arn  = "arn:aws:iam::321298294706:group/SC_Usergroup"
+region               = "eu-central-1"
+portfolio_name       = "TF EC2 Portfolio"
+product_name         = "EC2 Public IP Product"
+template_url         = "https://lab006-sc-tf-bucket.s3.eu-central-1.amazonaws.com/ec2-template.yaml"
+launch_role_arn      = "arn:aws:iam::321298294706:role/EC2-Demo-SR"
+launch_principal_arn = "arn:aws:iam::321298294706:group/SC_Usergroup"

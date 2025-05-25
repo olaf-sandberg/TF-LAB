@@ -1,17 +1,14 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.0"
+    }
+  }
+}
+
 provider "aws" {
   region = "eu-central-1"
-}
-
-resource "aws_s3_bucket" "sc_templates" {
-  bucket = "lab006-sc-tf-bucket"
-  force_destroy = true
-}
-
-resource "aws_s3_object" "cf_template" {
-  bucket = aws_s3_bucket.sc_templates.id
-  key    = "ec2-template.yaml"
-  source = var.template_path
-  etag   = filemd5(var.template_path)
 }
 
 resource "aws_servicecatalog_portfolio" "portfolio" {
@@ -24,10 +21,11 @@ resource "aws_servicecatalog_product" "product" {
   name  = var.product_name
   owner = "Terraform"
   type  = "CLOUD_FORMATION_TEMPLATE"
+
   provisioning_artifact_parameters {
     name         = "v1"
     description  = "Initial version"
-    template_url = aws_s3_object.cf_template.url
+    template_url = var.template_url
     type         = "CLOUD_FORMATION_TEMPLATE"
   }
 }

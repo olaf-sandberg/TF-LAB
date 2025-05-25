@@ -1,3 +1,7 @@
+variable "region" {
+  default = "eu-central-1"
+}
+
 variable "portfolio_name" {
   default = "TF EC2 Portfolio"
 }
@@ -6,8 +10,9 @@ variable "product_name" {
   default = "EC2 Public IP Product"
 }
 
-variable "template_path" {
-  default = "ec2-template.yaml"
+variable "template_url" {
+  description = "The full HTTPS URL of the CloudFormation template"
+  type        = string
 }
 
 variable "launch_role_arn" {
