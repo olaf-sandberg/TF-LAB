@@ -16,7 +16,7 @@ data "aws_iam_policy_document" "lambda_trust" {
 }
 
 resource "aws_iam_role_policy" "lambda_policy" {
-  name = "lab002-s3-sqs-sns-lambda-cw-policy"
+  name = "lab002-s3-sqs-sns-lambda-cw-polic"
   role = aws_iam_role.lambda_exec.id
 
   policy = data.aws_iam_policy_document.lambda_policy_doc.json
