@@ -16,4 +16,5 @@ terraform {
   resource "aws_instance" "ec2-1" {
     instance_type = "t3.micro"
     ami = "ami-04d20b438ef4a018a"
+    subnet_id = "subnet-06e16c93245eb9353"
   }
