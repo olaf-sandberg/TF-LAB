@@ -3,7 +3,6 @@ terraform {
     aws = {
       source = "hashicorp/aws"
       version = "3.5"
-      alias = "eu"
       region = "eu-central-1"
     }
   }
