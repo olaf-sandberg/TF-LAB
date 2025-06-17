@@ -8,6 +8,11 @@ terraform {
   }
 }
 
+provider "aws" {
+  region = "eu-central-1"
+  alias = "eu"
+  
+}
 
 
 resource "aws_instance" "ec2-1" {
