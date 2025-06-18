@@ -14,6 +14,13 @@ terraform {
       version = "3.5"
     }
   }
+
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "OLAFSANDBERG"
+    
+    
+  }
 }
 
 provider "aws" {
