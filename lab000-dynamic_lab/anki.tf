@@ -1,8 +1,17 @@
 terraform {
+  cloud { 
+    
+    organization = "OLAFSANDBERG" 
+
+    workspaces { 
+      name = "tf_lab" 
+    } 
+  } 
+
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = "3.5"
+      version = "5.0"
     }
   }
 }
@@ -13,13 +22,10 @@ provider "aws" {
   
 }
 
-
 resource "aws_instance" "ec2-1" {
   instance_type = var.ec2_type
   ami = var.ami
   subnet_id = var.subnet_id
-
-  tags = {
-    name = "EC2-${local.name}"
-  }
+  provider = aws.eu
+  
 }

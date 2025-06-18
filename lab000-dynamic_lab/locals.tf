@@ -1,3 +1,3 @@
 locals {
-    name = "olo-project"
+  name = "project.olo"
 }
