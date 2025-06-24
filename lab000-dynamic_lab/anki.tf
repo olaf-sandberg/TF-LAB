@@ -1,5 +1,5 @@
 terraform {
-  /*
+  
   cloud { 
     
     organization = "OLAFSANDBERG" 
@@ -7,7 +7,7 @@ terraform {
     workspaces { 
       name = "tf_lab" 
     }
-    */ 
+  }
 
   required_providers {
     aws = {
