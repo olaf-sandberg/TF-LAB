@@ -23,10 +23,13 @@ provider "aws" {
   
 }
 
-resource "aws_instance" "ec2-1" {
-  instance_type = var.ec2_type
-  ami = var.ami
-  subnet_id = var.subnet_id
-  provider = aws.eu
+resource "aws_instance" "ec2-olo" {
+  subnet_id = "subnet-0c66c7cba1beba439"
+  ami = "ami-04d20b438ef4a018a"
+  instance_type = "t2.nano"
+
+tags = {
+  name = "${local.project}"
+}
   
 }
