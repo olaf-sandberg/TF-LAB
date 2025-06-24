@@ -1,3 +1,3 @@
 locals {
-  name = "project-olo"
+  project = "NCIA-001"
 }
