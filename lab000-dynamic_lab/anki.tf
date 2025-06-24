@@ -1,12 +1,13 @@
 terraform {
+  /*
   cloud { 
     
     organization = "OLAFSANDBERG" 
 
     workspaces { 
       name = "tf_lab" 
-    } 
-  } 
+    }
+    */ 
 
   required_providers {
     aws = {
