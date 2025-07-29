@@ -33,3 +33,16 @@ tags = {
 }
   
 }
+
+
+
+resource "aws_s3_bucket" "s3_bucket" {
+  bucket = "olotestbucket-${count.index}"
+  count = 3
+  tags = {
+    Name = "Bucket-${count.index}"
+    project = "AWS Sandbox"
+  }
+
+  
+}
