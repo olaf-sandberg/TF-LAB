@@ -28,3 +28,13 @@ resource "aws_subnet" "main" {
     Name = "Main"
   }
 }
+
+resource "aws_subnet" "main2" {
+  vpc_id     = aws_vpc.test1.id
+  cidr_block = "192.168.1.0/24"
+  availability_zone = "eu-central-1a"
+
+  tags = {
+    Name = "Main"
+  }
+}
