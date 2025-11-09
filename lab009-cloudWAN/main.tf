@@ -135,7 +135,7 @@ module "sg_west_2d" {
   project     = "cloudwan-lab"
 }
 
-module "sg_west_2d" {
+module "sg_west_2e" {
   source     = "./modules/security/SG"
   providers  = { aws = aws.eu_west_2 }
 
