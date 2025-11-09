@@ -94,33 +94,53 @@ module "vpc_e" {
 
 
 
-module "sg_central_1" {
+module "sg_central_1a" {
   source     = "./modules/security/SG"
   providers  = { aws = aws.eu_central_1 }
 
-  sg_name     = "sg_eu_1"
+  sg_name     = "sg_eu_1_a"
   vpc_id      = module.vpc_a.vpc_id
   environment = "dev"
   project     = "cloudwan-lab"
 }
 
+module "sg_central_1b" {
+  source     = "./modules/security/SG"
+  providers  = { aws = aws.eu_central_1 }
 
-module "sg_west_1" {
+  sg_name     = "sg_eu_1_b"
+  vpc_id      = module.vpc_b.vpc_id
+  environment = "dev"
+  project     = "cloudwan-lab"
+}
+
+
+module "sg_west_1c" {
   source     = "./modules/security/SG"
   providers  = { aws = aws.eu_west_1 }
 
-  sg_name     = "sg_west_1"
-  vpc_id      = module.vpc_a.vpc_id
+  sg_name     = "sg_west_1_c"
+  vpc_id      = module.vpc_c.vpc_id
   environment = "dev"
   project     = "cloudwan-lab"
 }
 
-module "sg_west_2" {
+module "sg_west_2d" {
   source     = "./modules/security/SG"
   providers  = { aws = aws.eu_west_2 }
 
-  sg_name     = "sg_west_2"
-  vpc_id      = module.vpc_a.vpc_id
+  sg_name     = "sg_west_2d"
+  vpc_id      = module.vpc_d.vpc_id
+  environment = "dev"
+  project     = "cloudwan-lab"
+}
+
+module "sg_west_2d" {
+  source     = "./modules/security/SG"
+  providers  = { aws = aws.eu_west_2 }
+
+  sg_name     = "sg_west_2e"
+  vpc_id      = module.vpc_e.vpc_id
   environment = "dev"
   project     = "cloudwan-lab"
 }
