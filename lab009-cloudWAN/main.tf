@@ -98,7 +98,7 @@ module "sg_central-1" {
   source     = "./modules/security/SG"
   providers  = { aws = aws.eu_central_1 }
 
-  sg_name     = "sg-eu-1"
+  sg_name     = "sg_eu_1"
   vpc_id      = module.vpc_a.vpc_id
   environment = "dev"
   project     = "cloudwan-lab"
@@ -109,7 +109,7 @@ module "sg_west-1" {
   source     = "./modules/security/SG"
   providers  = { aws = aws.eu_west_1 }
 
-  sg_name     = "sg-west-1"
+  sg_name     = "sg_west_1"
   vpc_id      = module.vpc_a.vpc_id
   environment = "dev"
   project     = "cloudwan-lab"
@@ -119,7 +119,7 @@ module "sg_west-2" {
   source     = "./modules/security/SG"
   providers  = { aws = aws.eu_west_2 }
 
-  sg_name     = "sg-west-2"
+  sg_name     = "sg_west_2"
   vpc_id      = module.vpc_a.vpc_id
   environment = "dev"
   project     = "cloudwan-lab"
