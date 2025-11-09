@@ -94,7 +94,7 @@ module "vpc_e" {
 
 
 
-module "sg_central-1" {
+module "sg_central_1" {
   source     = "./modules/security/SG"
   providers  = { aws = aws.eu_central_1 }
 
@@ -105,7 +105,7 @@ module "sg_central-1" {
 }
 
 
-module "sg_west-1" {
+module "sg_west_1" {
   source     = "./modules/security/SG"
   providers  = { aws = aws.eu_west_1 }
 
@@ -115,7 +115,7 @@ module "sg_west-1" {
   project     = "cloudwan-lab"
 }
 
-module "sg_west-2" {
+module "sg_west_2" {
   source     = "./modules/security/SG"
   providers  = { aws = aws.eu_west_2 }
 
