@@ -53,7 +53,7 @@ module "vpc_c" {
 }
 
 
-module "vpc_ad" {
+module "vpc_d" {
   source = "./modules/network/vpc"
 
   providers = {
@@ -72,7 +72,7 @@ module "vpc_ad" {
 }
 
 
-module "vpc_ad" {
+module "vpc_e" {
   source = "./modules/network/vpc"
 
   providers = {
