@@ -44,7 +44,7 @@ module "vpc_c" {
   region         = "eu-west-1"
   project        = "cloudwan-lab"
   cidr           = "10.100.0.0/16"
-  public_subnets = ["10.1000.0.0/24"]
+  public_subnets = ["10.100.0.0/24"]
 
   tags = {
     Environment = "shared"
