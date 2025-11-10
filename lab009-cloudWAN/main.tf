@@ -183,7 +183,7 @@ module "ec2_c" {
 
   instance_name = "ec2-c"
   instance_type = "t3.micro"
-  ami_id        = "ami-04d20b438ef4a018a"
+  ami_id        = "ami-06297e16b71156b52"
   subnet_id     = module.vpc_c.public_subnet_ids[0]
   sg_id         = module.sg_west_1c.sg_id
   key_name      = "cloudwan-key"
@@ -198,7 +198,7 @@ module "ec2_d" {
 
   instance_name = "ec2-d"
   instance_type = "t3.micro"
-  ami_id        = "ami-04d20b438ef4a018a"
+  ami_id        = "ami-075599e9cc6e3190d"
   subnet_id     = module.vpc_d.public_subnet_ids[0]
   sg_id         = module.sg_west_2d.sg_id
   key_name      = "cloudwan-key"
@@ -213,7 +213,7 @@ module "ec2_e" {
 
   instance_name = "ec2-e"
   instance_type = "t3.micro"
-  ami_id        = "ami-04d20b438ef4a018a"
+  ami_id        = "ami-075599e9cc6e3190d"
   subnet_id     = module.vpc_e.public_subnet_ids[0]
   sg_id         = module.sg_west_2e.sg_id
   key_name      = "cloudwan-key"
