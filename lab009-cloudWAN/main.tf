@@ -220,3 +220,81 @@ module "ec2_e" {
   environment   = "prod"
   project       = "cloudwan-lab"
 }
+
+
+
+
+
+
+
+/*
+
+# ──────────────────────────────
+# CLOUD WAN CORE NETWORK
+# ──────────────────────────────
+module "cloudwan_core" {
+  source  = "./modules/cloudwan/core_network"
+  project = "cloudwan-lab"
+}
+
+module "cloudwan_policy" {
+  source          = "./modules/cloudwan/policy"
+  core_network_id = module.cloudwan_core.core_network_id
+  policy_path     = "./modules/cloudwan/policy/cloudwan_policy.json"
+}
+
+# ──────────────────────────────
+# CLOUD WAN ATTACHMENTS
+# ──────────────────────────────
+
+# eu-central-1 (DEV)
+module "attach_vpc_a" {
+  source          = "./modules/cloudwan/attachments"
+  core_network_id = module.cloudwan_core.core_network_id
+  vpc_arn         = module.vpc_a.vpc_arn
+  subnet_arns     = module.vpc_a.public_subnet_arns
+  segment_name    = "dev"
+  project         = "cloudwan-lab"
+}
+
+# eu-central-1 (PROD)
+module "attach_vpc_b" {
+  source          = "./modules/cloudwan/attachments"
+  core_network_id = module.cloudwan_core.core_network_id
+  vpc_arn         = module.vpc_b.vpc_arn
+  subnet_arns     = module.vpc_b.public_subnet_arns
+  segment_name    = "prod"
+  project         = "cloudwan-lab"
+}
+
+# eu-west-1 (SHARED)
+module "attach_vpc_c" {
+  source          = "./modules/cloudwan/attachments"
+  core_network_id = module.cloudwan_core.core_network_id
+  vpc_arn         = module.vpc_c.vpc_arn
+  subnet_arns     = module.vpc_c.public_subnet_arns
+  segment_name    = "shared"
+  project         = "cloudwan-lab"
+}
+
+# eu-west-2 (DEV)
+module "attach_vpc_d" {
+  source          = "./modules/cloudwan/attachments"
+  core_network_id = module.cloudwan_core.core_network_id
+  vpc_arn         = module.vpc_d.vpc_arn
+  subnet_arns     = module.vpc_d.public_subnet_arns
+  segment_name    = "dev"
+  project         = "cloudwan-lab"
+}
+
+# eu-west-2 (PROD)
+module "attach_vpc_e" {
+  source          = "./modules/cloudwan/attachments"
+  core_network_id = module.cloudwan_core.core_network_id
+  vpc_arn         = module.vpc_e.vpc_arn
+  subnet_arns     = module.vpc_e.public_subnet_arns
+  segment_name    = "prod"
+  project         = "cloudwan-lab"
+}
+
+*/
