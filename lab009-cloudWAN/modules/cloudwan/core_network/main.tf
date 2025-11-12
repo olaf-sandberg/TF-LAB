@@ -10,7 +10,3 @@ resource "aws_networkmanager_core_network" "this" {
     Name = "${var.project}-core-network"
   }
 }
-
-output "core_network_id" {
-  value = aws_networkmanager_core_network.this.id
-}

@@ -227,7 +227,7 @@ module "ec2_e" {
 
 
 
-/*
+
 
 # ──────────────────────────────
 # CLOUD WAN CORE NETWORK
@@ -297,4 +297,3 @@ module "attach_vpc_e" {
   project         = "cloudwan-lab"
 }
 
-*/
