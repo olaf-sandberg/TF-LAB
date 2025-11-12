@@ -1,42 +1,37 @@
 {
-  "version": "2024.11",
-  "core-network-configuration": {
-    "asn-ranges": ["64512-64520"],
-    "edge-locations": [
-      { "location": "eu-central-1" },
-      { "location": "eu-west-1" },
-      { "location": "eu-west-2" }
-    ],
-    "segments": [
-      {
-        "name": "shared",
-        "require-attachment-acceptance": false,
-        "isolate-attachments": false
-      },
-      {
-        "name": "dev",
-        "require-attachment-acceptance": false,
-        "isolate-attachments": true
-      },
-      {
-        "name": "prod",
-        "require-attachment-acceptance": false,
-        "isolate-attachments": true
-      }
-    ]
-  },
-  "network-segments": [
+  "version": "2021.12.01",
+  "segments": [
     {
-      "name": "shared",
-      "allowed-customer-segments": ["dev", "prod"]
+      "name": "DEV",
+      "description": "Development segment",
+      "edgeLocations": ["eu-central-1", "eu-west-1"],
+      "isolateAttachments": false
     },
     {
-      "name": "dev",
-      "allowed-customer-segments": ["shared"]
+      "name": "PROD",
+      "description": "Production segment",
+      "edgeLocations": ["eu-central-1", "eu-west-2"],
+      "isolateAttachments": false
     },
     {
-      "name": "prod",
-      "allowed-customer-segments": ["shared"]
+      "name": "SHARED",
+      "description": "Shared resources",
+      "edgeLocations": ["eu-west-1"],
+      "isolateAttachments": false
+    }
+  ],
+  "attachmentPolicies": [
+    {
+      "ruleNumber": 100,
+      "action": "ASSOCIATE",
+      "conditions": [
+        {
+          "type": "TAG_EQUALS",
+          "key": "Environment",
+          "value": "DEV"
+        }
+      ],
+      "segment": "DEV"
     }
   ]
 }
