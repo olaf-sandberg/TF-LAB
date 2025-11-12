@@ -8,6 +8,6 @@ resource "aws_networkmanager_vpc_attachment" "this" {
   }
 
   options {
-    ipv6_support = "disable"
+    ipv6_support = false
   }
 }
