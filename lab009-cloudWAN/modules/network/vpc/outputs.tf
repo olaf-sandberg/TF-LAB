@@ -17,3 +17,14 @@ output "igw_id" {
   description = "Internet Gateway ID"
   value       = aws_internet_gateway.this.id
 }
+
+
+output "vpc_arn" {
+  description = "The ARN of the VPC"
+  value       = aws_vpc.this.arn
+}
+
+output "public_subnet_arns" {
+  description = "ARNs of the public subnets"
+  value       = [for s in aws_subnet.public : s.arn]
+}
