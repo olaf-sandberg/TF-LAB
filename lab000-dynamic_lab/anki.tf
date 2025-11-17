@@ -28,6 +28,8 @@ provider "aws" {
   alias = "west"
 }
 
+###test
+
 resource "aws_instance" "ec2-olo" {
   provider = aws.central
   count = 3
