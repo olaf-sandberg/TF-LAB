@@ -226,7 +226,7 @@ module "ec2_e" {
 
 
 
-
+/*
 
 
 # ──────────────────────────────
@@ -297,3 +297,4 @@ module "attach_vpc_e" {
   project         = "cloudwan-lab"
 }
 
+*/
