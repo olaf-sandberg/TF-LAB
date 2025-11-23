@@ -22,3 +22,8 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "region" {
+  description = "Availability zones to use"
+  type        = string
+}
