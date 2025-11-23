@@ -1,3 +1,8 @@
+terraform {
+  backend "s3" {}
+}
+
+
 variable "vpc_cidr" {}
 variable "region" {}
 variable "name" {}
