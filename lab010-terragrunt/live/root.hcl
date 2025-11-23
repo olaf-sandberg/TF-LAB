@@ -30,6 +30,7 @@ remote_state {
   }
 }
 
+# Global defaults
 inputs = {
-  global_tags = local.default_tags
+  environment = "live"
 }
